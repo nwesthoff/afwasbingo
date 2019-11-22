@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Afwasbingo - Powered by Okkebas</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="background">
+      <video
+        id="video"
+        autoplay=""
+        loop=""
+        muted=""
+        poster="video/afwasbingo.jpg"
+        playinsline=""
+      >
+        <source src="video/afwasbingo.mp4" type="video/mp4" />
+        <source src="video/afwasbingo.webm" type="video/webm" />
+      </video>
+
+      <div class="superbingocontainer">
+        <h1 id="superbingo">#superbingo</h1>
+      </div>
+    </div>
+
+    <div class="audio-button">
+      <a href="#" onclick="audioSpeed()"><img src="img/logo.png"/></a>
+      <audio id="audio" autoplay="" loop="" playsinline="">
+        <source id="audioSource" src="audio/afwasbingo.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <script type="text/javascript">
+      function audioSpeed() {
+        var audio = document.getElementById("audio");
+        var video = document.getElementById("video");
+        var superbingo = document.getElementById("superbingo");
+
+        if (audio.playbackRate == 1) {
+          audio.playbackRate = 1.5;
+          video.playbackRate = 6;
+          superbingo.className += " display";
+        } else {
+          audio.playbackRate = 1;
+          video.playbackRate = 1;
+          superbingo.className -= " display";
+        }
+      }
+    </script>
+  </body>
+</html>
